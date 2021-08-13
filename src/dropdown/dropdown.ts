@@ -504,25 +504,25 @@ export class NgbDropdown implements AfterContentInit, OnDestroy {
       * apply the new placement
       * in case of top use up-arrow or down-arrow otherwise
       */
-      const dropdownClass = placement.search('^top') !== -1 ? 'dropup' : 'dropdown';
-      renderer.addClass(dropdownElement, dropdownClass);
-
-      const bodyContainer = this._bodyContainer;
-      if (bodyContainer) {
-        renderer.removeClass(bodyContainer, 'dropup');
-        renderer.removeClass(bodyContainer, 'dropdown');
-        renderer.addClass(bodyContainer, dropdownClass);
-      }
-
-      // We need to trim the value because custom properties can also include spaces
-      const isEnd = getComputedStyle(this._menu.nativeElement).getPropertyValue('--bs-position').trim() === 'end';
-      if (isEnd) {
-        renderer.setStyle(this._menu.nativeElement, 'left', 'auto');
-        renderer.setStyle(this._menu.nativeElement, 'right', '0');
-      } else {
-        renderer.removeStyle(this._menu.nativeElement, 'left');
-        renderer.removeStyle(this._menu.nativeElement, 'right');
-      }
+      // const dropdownClass = placement.search('^top') !== -1 ? 'dropup' : 'dropdown';
+      // renderer.addClass(dropdownElement, dropdownClass);
+      //
+      // const bodyContainer = this._bodyContainer;
+      // if (bodyContainer) {
+      //   renderer.removeClass(bodyContainer, 'dropup');
+      //   renderer.removeClass(bodyContainer, 'dropdown');
+      //   renderer.addClass(bodyContainer, dropdownClass);
+      // }
+      //
+      // // We need to trim the value because custom properties can also include spaces
+      // const isEnd = getComputedStyle(this._menu.nativeElement).getPropertyValue('--bs-position').trim() === 'end';
+      // if (isEnd) {
+      //   renderer.setStyle(this._menu.nativeElement, 'left', 'auto');
+      //   renderer.setStyle(this._menu.nativeElement, 'right', '0');
+      // } else {
+      //   renderer.removeStyle(this._menu.nativeElement, 'left');
+      //   renderer.removeStyle(this._menu.nativeElement, 'right');
+      // }
     }
   }
 }
