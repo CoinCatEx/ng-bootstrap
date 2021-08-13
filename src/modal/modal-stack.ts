@@ -58,7 +58,7 @@ export class NgbModalStack {
     const revertPaddingForScrollBar = this._scrollBar.compensate();
     const removeBodyClass = () => {
       if (!this._modalRefs.length) {
-        renderer.removeClass(this._document.body, 'modal-open');
+        renderer.setStyle(this._document.body, 'overflow-y', 'hidden');
         this._revertAriaHidden();
       }
     };
